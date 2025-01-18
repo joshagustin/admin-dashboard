@@ -44,6 +44,23 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: 1 / 1 / 3 / 2;
   display: grid;
   grid-template-rows: 1fr 3fr 2fr 3fr;
+  justify-content: baseline;
+  gap: 50px;
+  color: white;
+  padding: 30px;
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+.navigation {
+  margin-top: -40px;
+}
+
+li {
+  margin-top: 10px;
 }
 
 .header {
@@ -54,7 +71,6 @@ h1, h2, h3, h4, h5, h6 {
 .main-content {
   background-color: pink;
   grid-area: 2 / 2 / 3 / 3; /* also not necessary */
-  /* height: 1000px; */
 }
 
 body {
