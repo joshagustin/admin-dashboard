@@ -66,6 +66,24 @@ li {
 .header {
   background-color: gray;
   grid-area: 1 / 2 / 2 / 3; /* not necessary */
+  display: grid;
+  grid-template: repeat(2, 1fr) / 3fr 1fr;
+  align-items: center;
+}
+
+input[type='search'] {
+  width: 400px;
+}
+
+.profile,
+.create {
+  justify-self: end;
+  padding-right: 30px;
+}
+
+.search,
+.greeting {
+  padding-left: 30px;
 }
 
 .main-content {
