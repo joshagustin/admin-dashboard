@@ -88,7 +88,45 @@ input[type='search'] {
 
 .main-content {
   background-color: pink;
+  padding: 15px;
   grid-area: 2 / 2 / 3 / 3; /* also not necessary */
+  display: grid;
+  grid-template: repeat(2, 1fr) / 3fr 1fr;
+  gap: 15px;
+}
+
+.projects {
+  grid-area: 1 / 1 / 3 / 2;
+  display: grid; /* Removing this property*/
+  grid-template: 35px 10fr / 1fr; /* and this causes a grid blowout (cards exceed projects area)*/ 
+  /* keeping it causes the behavior that i want, making the container grow and the body scroll */
+}
+
+.card-container {
+  height: 100%;
+  display: grid;
+  grid-template: repeat(3, minmax(150px, 1fr)) / repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  grid-auto-rows: minmax(150px, 1fr);
+}
+
+.card {
+  background-color: black;
+}
+
+.notice-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr) / 1fr;
+}
+
+.notice-container > div {
+  background-color: black;
+}
+
+.projects,
+.announcements,
+.trending {
+  background-color: white;
 }
 
 body {
@@ -97,4 +135,3 @@ body {
   grid-template-rows: 2fr 9fr;
   grid-template-columns: minmax(150px, 1fr) 4fr;
 }
-
