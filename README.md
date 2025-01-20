@@ -14,7 +14,7 @@ tidbits i learned / roadblocks
 - setting a height on a container element causes children to shrink to minheight, if necessary, in minmax
 
 this led me on a tangent for hours ...
-<!-- TODO -->
+<!-- todo -->
 - try setting an explicit height on announcement and trending
 <!-- * -->
 - if i dont want a grid parent to grow to accommodate its children, set minmax(0, {whatever})
@@ -25,6 +25,9 @@ i want the announcements and trending sections to be smaller.
 setting height: 300px on trending seems to do the trick ???? (not really)
 <!-- * solved -->
 final answer: setting heights on topic-container and notice-container did the trick as well as using flexbox on the individual topics and notices to get them to fit how i wanted to.
-<!-- * DONE -->
+<!-- * done -->
 
-- 
+<!-- todo -->
+- !!! done (kinda)
+- clean up stylesheet
+- make other sections aside from card more web-responsive
