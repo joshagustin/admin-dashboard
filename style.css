@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Roboto, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/* temporary, for layout visualization */
+/* sidebar styles */
 .sidebar {
   background-color: var(--sidebar-background);
   grid-area: 1 / 1 / 3 / 2;
@@ -92,28 +92,68 @@ li {
   width: 20px;
 }
 
+/* header styles */
 .header {
   background-color: gray;
   grid-area: 1 / 2 / 2 / 3; /* not necessary */
   display: grid;
-  grid-template: repeat(2, 1fr) / 3fr 1fr;
+  grid-template: repeat(2, 1fr) / 3fr 2fr;
   align-items: center;
   padding: 15px 30px;
 }
 
 input[type='search'] {
-  width: 400px;
+  appearance: none;
+  height: 30px;
+  width: clamp(400px, 90%, 600px);
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 5px;
+  outline: none;
+  background-color: var(--main-content-background);
 }
 
-.profile,
-.create {
-  justify-self: end;
-} 
+input[type="search"]:not(:focus, :active)::-webkit-search-cancel-button {
+  display: none;
+}
+
+input[type="search"]:hover,
+input[type="search"]:focus-visible, 
+input[type="search"]:active {
+  border: 1px solid blue;
+}
+
+
+.profile {
+  display: grid;
+  grid-template-columns: repeat(2, 50px) 150px;
+  gap: 30px;
+  align-items: center;
+  justify-content: end;
+  justify-items: center;
+}
+
+.profile img:last-of-type {
+  background: var(--cat-background);
+  border-radius: 50%;
+  height: auto;
+  padding: 5px;
+}
+
+.profile img:first-of-type {
+  height: auto;
+  min-width: 20px;
+  max-width: 20px;
+}
+
+.profile > span {
+  font-weight: 700;
+}
 
 .greeting {
   display: grid;
   grid-template: 1fr 1fr / 1fr 8fr;
-  align-items: center;
+  column-gap: 15px;
 }
 
 .greeting img {
@@ -129,9 +169,45 @@ input[type='search'] {
   font-size: 1rem;
 }
 
+.greeting > span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  align-self: end;
+}
+
+.search {
+  display: flex;
+  gap: var(--main-content-gaps);
+  align-items: center;
+}
+
+.search img {
+  height: auto;
+  width: 25px;  
+}
+
+.create > button {
+  background-color: var(--sidebar-background);
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.create {
+  display: grid;
+  justify-content: end;
+  grid-template-columns: repeat(3, 80px);
+  padding: 20px;
+  gap: 40px;
+}
+
+/* content styles*/
 .main-content {
   background-color: var(--main-content-background);
-  padding: 15px;
+  padding: o15px;
   grid-area: 2 / 2 / 3 / 3; /* also not necessary */
   display: grid;
   grid-template: repeat(2, minmax(0, 1fr)) / 3fr 1fr; /* todo testing this*/
@@ -218,7 +294,8 @@ input[type='search'] {
 
 .card,
 .notice-container,
-.topic-container {
+.topic-container,
+.header {
   background-color: #fff;
   border-radius: 10px;
 }
